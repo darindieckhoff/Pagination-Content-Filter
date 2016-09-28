@@ -13,7 +13,7 @@ function pagination (listLength){
 //Add Page links
 function paginationLinks (pages){
   pagination();   //run pagination function to get # of pages needed
-  var newDiv = $('<div />').appendTo('body');       //add <div> after ul (.student-list)/append div to body
+  var newDiv = $('<div />').appendTo('.page');       //add <div> after ul (.student-list)/append div to body
   newDiv.attr('class', 'pagination');   //add .pagination class to div
   var $pagesUl = $('<ul></ul>');    //create disembodied unordered list
   $pagesUl.addClass('pageLinks');   //add class to unordered list
@@ -138,7 +138,7 @@ $('.student-search button').on('click' , function() {   //click handler for sear
 }); 
 
 //add eventlistener to input
-$('.student-search input').on('keyup' , function() {    //event handler to search 
+$('.student-search input').on('input' , function() {    //event handler to search 
   $('.error').remove();  //remoce error message
   search();   //finds matching students
 }); 
